@@ -1,18 +1,30 @@
 import { use, useState } from "react";
 import "./App.css";
 
-function Header() {
-  return <h1>Primer Header de este archivo JSX</h1>;
-}
 
 
 
 function App() {
-  const [count, almacen]=useState(0);
+  const [contar, almacen]=useState(0);
+  
+  const [titulo, setTitulo]=useState("Hola mundo");
+  const titulos= ['segundo', 'tercero', 'cuarto', 'quinto'];
+  
+
+  function cambio()
+  {
+    const random= Math.floor(Math.random()*titulos.length);
+    setTitulo(titulos[random]);
+  }
+
+
+  function Header(titulo) {
+    return <h1>{titulo}</h1>;
+  }
   
   return (
     <>
-      <Header /> {/*componente*/}
+      <Header titulo={titulo}/> {/*componente*/}
       <p>Hola mundo chat</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
@@ -25,7 +37,9 @@ function App() {
       <button onClick={()=>almacen(0)}>Restart</button>
 
       <button onClick={()=>almacen(count>0 ? count-1: count=0)}>Restar</button>
-      <p>{count}</p>
+
+      <button onClick={cambio}>Cambiar titulo</button>
+      <p>{contar}</p>
     </>
   );
 }
