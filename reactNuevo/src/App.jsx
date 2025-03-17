@@ -40,6 +40,8 @@ function App() {
 
       <button onClick={cambio}>Cambiar titulo</button>
       <p>{contar}</p>
+
+      {/* logré hacer un cambio */}
     </>
   );
 }
