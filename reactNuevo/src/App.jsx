@@ -2,7 +2,8 @@ import { use, useState } from "react";
 import "./App.css";
 
 
-
+//importar imagenes
+import miImagen from './assets/react.svg';
 
 function App() {
   const [contar, almacen]=useState(0);
@@ -40,6 +41,10 @@ function App() {
 
       <button onClick={cambio}>Cambiar titulo</button>
       <p>{contar}</p>
+
+
+      {/*Colocar imagen*/}
+      <img src={miImagen} alt="react"/>
 
       {/* logré hacer un cambio */}
     </>
