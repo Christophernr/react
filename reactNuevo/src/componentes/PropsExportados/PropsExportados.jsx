@@ -1,5 +1,5 @@
 
-import './PropsExportados.css'
+import '../PropsExportados/PropsExportados.css'
 export default function PropsExportados(masProps) {
     return(
       <div className='propsExportados'>

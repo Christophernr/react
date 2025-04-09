@@ -1,6 +1,6 @@
 //en vez de usar "props" se usa destructurado, osea un atributo por atributo y es el nombre que tienen en el array
 
-import './PropsExportados.css'
+import '../PropDestructurado/PropDestructurado.css'
 export default function PropDestructurado({tituloExportado, srcExportado, textoExportado})
   {
     return(

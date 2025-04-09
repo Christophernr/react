@@ -5,16 +5,16 @@ import "./App.css";
 import miImagen from "./assets/react.svg";
 
 //estructuracion de componentes
-import Header from "./componentes/Header.jsx";
-import Conceptos from "./componentes/Conceptos.jsx";
-import PropDestructurado from "./componentes/PropDestructurado.jsx";
-import PropsExportados from "./componentes/PropsExportados.jsx";
+import Header from "./componentes/Header/Header.jsx";
+import Conceptos from "./componentes/Conceptos/Conceptos.jsx";
+import PropDestructurado from "./componentes/PropDestructurado/PropDestructurado.jsx";
+import PropsExportados from "./componentes/PropsExportados/PropsExportados.jsx";
 
 //aqui termina la estructuracion de componentes
 
 //imports necesarios de css
-import "./componentes/Conceptos.css";
-import "./componentes/PropDestructurado.css";
+import "./componentes/Conceptos/Conceptos.css";
+import "./componentes/PropDestructurado/PropDestructurado.css";
 //aqui terminan los imports necesarios de css
 //importar el data del js
 //las llames detectan que es una variable exportada y no un nombre

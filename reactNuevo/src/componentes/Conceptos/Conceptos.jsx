@@ -1,5 +1,5 @@
 // import { data } from "../datosExport.js";
-import './Conceptos.css';
+import '../Conceptos/Conceptos.css';
 export default function Conceptos(props) {
   return (
     
