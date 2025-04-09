@@ -1,0 +1,21 @@
+.container-propsExportados
+{
+    /* display: flex; */
+    flex-direction: row-reverse;
+
+} 
+.propsExportados h1
+{
+    font-size: 1.5rem;
+    color: rebeccapurple;
+}
+.propsExportados img
+{
+    width: 8rem;
+}
+.propsExportados p
+{
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}

@@ -3,14 +3,21 @@ import "./App.css";
 
 //importar imagenes
 import miImagen from "./assets/react.svg";
-//estructuracion de componentes 
+
+//estructuracion de componentes
 import Header from "./componentes/Header.jsx";
 import Conceptos from "./componentes/Conceptos.jsx";
 import PropDestructurado from "./componentes/PropDestructurado.jsx";
 import PropsExportados from "./componentes/PropsExportados.jsx";
+
 //aqui termina la estructuracion de componentes
+
+//imports necesarios de css
+import "./componentes/Conceptos.css";
+import "./componentes/PropDestructurado.css";
+//aqui terminan los imports necesarios de css
 //importar el data del js
-//las llames detectan que es una variable exportada y no un nombre 
+//las llames detectan que es una variable exportada y no un nombre
 import { data } from "./datosExport.js";
 function App() {
   const [contar, almacen] = useState(0);
@@ -24,7 +31,6 @@ function App() {
     setTitulo(titulos[random]);
   }
 
- 
   return (
     <>
       <Header titulo={titulo} /> {/*componente*/}
@@ -44,56 +50,54 @@ function App() {
       <p>{contar}</p>
       {/*Colocar imagen*/}
       <img src={miImagen} alt="react" />
-
-      <h2>CONCEPTOS de Prop</h2>
-      <Conceptos
-        src={miImagen}
-        titulo="Hola mundo"
-        descripcion="Estoy aprendiendo a usar props"
-      />
-      <Conceptos
-        src={miImagen}
-        titulo="Hola luna"
-        descripcion="Segundo props"
-      />
-      <Conceptos
-        src={miImagen}
-        titulo="Hola que si hola"
-        descripcion="Tercer props"
-      />
-      <Conceptos
-        src={miImagen}
-        titulo="Hola Titulo"
-        descripcion="La misma imagen para todos xd"
-      />  
-
-
+      <h2 className="titulo-conceptos">CONCEPTOS de Prop</h2>
+      <container className="container-conceptos">
+        <Conceptos
+          src={miImagen}
+          titulo="Hola mundo"
+          descripcion="Estoy aprendiendo a usar props"
+        />
+        <Conceptos
+          src={miImagen}
+          titulo="Hola luna"
+          descripcion="Segundo props"
+        />
+        <Conceptos
+          src={miImagen}
+          titulo="Hola que si hola"
+          descripcion="Tercer props"
+        />
+        <Conceptos
+          src={miImagen}
+          titulo="Hola Titulo"
+          descripcion="La misma imagen para todos xd"
+        />
+      </container>
       {/*se usa mas que nada para no tener todo un texto aqui, se usó un js aparte que tenia en arrays el contenido
       asi aprendí mas de exportar props y de tener mas limpio el cdigo y mas dinamico tambien*/}
       <h2>CONCEPTOS DE : Mas props</h2>
-      <PropsExportados
-        tituloExportado={data[0].titulo}
-        srcExportado={data[0].scr}
-        textoExportado={data[0].texto}
-      />
-
-      <PropsExportados
-        tituloExportado={data[1].titulo}
-        srcExportado={data[1].scr}
-        textoExportado={data[1].texto}
-      />
-
-      <PropsExportados
-        tituloExportado={data[2].titulo}
-        srcExportado={data[2].scr}
-        textoExportado={data[2].texto}
-      />
-    <h2>DESTRUCTURADO</h2>
-  {/*ejemplo de como se exportó el componente del array "en una sola maleta" xd y se destrucutura allá arriba*/}
-      <PropDestructurado
-        {...data[3]}
-      />
-      {/* logré hacer un cambio */}
+      <container className="container-conceptos container-propsExportados">
+        <PropsExportados
+          tituloExportado={data[0].titulo}
+          srcExportado={data[0].scr}
+          textoExportado={data[0].texto}
+        />
+        <PropsExportados
+          tituloExportado={data[1].titulo}
+          srcExportado={data[1].scr}
+          textoExportado={data[1].texto}
+        />
+        <PropsExportados
+          tituloExportado={data[2].titulo}
+          srcExportado={data[2].scr}
+          textoExportado={data[2].texto}
+        />
+        
+      </container>
+      <h2 className="titulo-destructurado">DESTRUCTURADO</h2>
+        {/*ejemplo de como se exportó el componente del array "en una sola maleta" xd y se destrucutura allá arriba*/}
+        <PropDestructurado {...data[3]} />
+        {/* logré hacer un cambio */}
     </>
   );
 }

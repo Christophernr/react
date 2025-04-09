@@ -1,0 +1,19 @@
+.titulo-destructurado
+{
+    text-align: center;
+    color: aqua;
+}
+.propsDestructurado h1
+{
+    font-size: 1.5rem;
+}
+.propsDestructurado img
+{
+    width: 10rem;
+}
+
+.propsDestructurado p
+{
+    text-align: center;
+    font-size: 1.9rem;
+}
