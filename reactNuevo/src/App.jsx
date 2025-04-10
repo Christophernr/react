@@ -9,16 +9,19 @@ import Header from "./componentes/Header/Header.jsx";
 import Conceptos from "./componentes/Conceptos/Conceptos.jsx";
 import PropDestructurado from "./componentes/PropDestructurado/PropDestructurado.jsx";
 import PropsExportados from "./componentes/PropsExportados/PropsExportados.jsx";
-
+import TabBotones from "./componentes/TabBotones/TabBotones.jsx";
+import TabBotonesChildren from "./componentes/TabBotones/TabBotonesChildren.jsx";
 //aqui termina la estructuracion de componentes
 
 //imports necesarios de css
 import "./componentes/Conceptos/Conceptos.css";
 import "./componentes/PropDestructurado/PropDestructurado.css";
+import "./componentes/TabBotones/TabBotones.css";
 //aqui terminan los imports necesarios de css
 //importar el data del js
 //las llames detectan que es una variable exportada y no un nombre
 import { data } from "./datosExport.js";
+import { contenidoBtns } from "./componentes/TabBotones/PropsBotones/PropsBotones.js";
 function App() {
   const [contar, almacen] = useState(0);
 
@@ -92,12 +95,34 @@ function App() {
           srcExportado={data[2].scr}
           textoExportado={data[2].texto}
         />
-        
       </container>
       <h2 className="titulo-destructurado">DESTRUCTURADO</h2>
-        {/*ejemplo de como se exportó el componente del array "en una sola maleta" xd y se destrucutura allá arriba*/}
-        <PropDestructurado {...data[3]} />
-        {/* logré hacer un cambio */}
+      {/*ejemplo de como se exportó el componente del array "en una sola maleta" xd y se destrucutura allá arriba*/}
+      <PropDestructurado {...data[3]} />
+      {/* logré hacer un cambio */}
+      <div className="div-seccion-botones">
+
+        <section className="section-botones">
+        <h2>
+          Seccion de botones usando un array y con ese array dandoles el texto
+        </h2>
+          <TabBotones texto={contenidoBtns[0].texto} />
+          <TabBotones texto={contenidoBtns[1].texto} />
+          <TabBotones texto={contenidoBtns[2].texto} />
+          <TabBotones texto={contenidoBtns[3].texto} />
+          <TabBotones texto={contenidoBtns[4].texto} />
+          <TabBotones texto={contenidoBtns[5].texto} />
+        </section>
+        
+        <section className="section-botonesChildren">
+        <h2>Sección de botones usando el children</h2>
+          <TabBotonesChildren>Boton 1</TabBotonesChildren>
+          <TabBotonesChildren>Boton 2</TabBotonesChildren>
+          <TabBotonesChildren>Boton 3</TabBotonesChildren>
+          <TabBotonesChildren>Boton 4</TabBotonesChildren>
+          <TabBotonesChildren>Boton 5</TabBotonesChildren>
+        </section>
+      </div>
     </>
   );
 }
